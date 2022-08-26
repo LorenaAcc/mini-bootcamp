@@ -1,16 +1,22 @@
-<h1>App component - Esta es la {{ numeroDeTarea }}</h1>
+<div class="container">
+    <div class="row">
+        <div class="col-xs-12">
+            <h1>App component - Esta es la {{ numeroDeTarea }}</h1>
 
-<input type="text" [(ngModel)] = "numeroDeTarea">
-<p>{{ numeroDeTarea }}</p>
+            <input type="text" [(ngModel)] = "numeroDeTarea">
+            <p>{{ numeroDeTarea }}</p>
 
-<hr>
-<app-server></app-server>
+            <hr>
+            <app-server></app-server>
 
-<hr>
-<app-my-custom-with-cli></app-my-custom-with-cli>
+            <hr>
+            <app-my-custom-with-cli></app-my-custom-with-cli>
 
-<hr>
-<app-my-custom></app-my-custom>
+            <hr>
+            <app-my-custom></app-my-custom>
 
-<hr>
-<app-with-template></app-with-template>
+            <hr>
+            <app-with-template></app-with-template>
+        </div>
+    </div>
+</div>
