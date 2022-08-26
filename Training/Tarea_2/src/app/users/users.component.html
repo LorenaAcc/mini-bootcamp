@@ -1,0 +1,26 @@
+<!--Con string interpolation:-->
+<label>Nombre de usuario</label>
+<input type="text" class="form-control" (input)="onUpdateUserName1($event)">
+<p>{{ username1 }}</p>
+<button class="btn btn-primary" [disabled]="!allowNewUser" (click)="onCreateUser1()">Agregar usuario</button>
+<h4>Status: <p>{{ allowNewUser }}</p></h4>
+<p>{{ userCreationStatus1}}</p>
+
+<hr>
+<!--Con property binding:-->
+<label>Nombre de usuario</label>
+<input type="text" class="form-control" [(ngModel)]="username2">
+<!--<input type="text" class="form-control" (input)="onUpdateUserName2($event)">-->
+<p>{{ username2 }}</p>
+<button class="btn btn-primary" [disabled]="!allowNewUser" (click)="onCreateUser2()">Agregar usuario</button>
+<br>
+<br>
+<button class="btn btn-primary" [disabled]=" username2 === '' " (click)="username2 = ''">Resetear usuario</button>
+<h4>Status: <p [innerText]="allowNewUser"></p></h4>
+<p>{{ userCreationStatus2}}</p>
+<!--But, Don't mix property binding and string interpolation!!!:-->
+
+<hr>
+<p>Repaso de la sección 2</p>
+<app-data-binding></app-data-binding>
+<app-data-binding></app-data-binding>
