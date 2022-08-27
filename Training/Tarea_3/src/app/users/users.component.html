@@ -1,0 +1,13 @@
+
+<button class="btn btn-primary" (click)="onToggleDetails()">Mostrar Detalles</button>
+<br>
+<br>
+<br>
+<p *ngIf="showMessage">Mensaje oculto = Algo....</p>
+<br>
+<div
+        *ngFor="let logItem of logClicks"
+        [ngStyle]="{backgroundColor: logItem >= 3 ? 'pink' : 'transparent'}"
+        [ngClass]="{'white-text': logItem >= 3}"
+      >Posición: {{ logItem }}. Fecha Hora: {{timestamp}}
+</div>
