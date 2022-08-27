@@ -8,6 +8,6 @@
 <div
         *ngFor="let logItem of logClicks"
         [ngStyle]="{backgroundColor: logItem >= 3 ? 'pink' : 'transparent'}"
-        [ngClass]="{'white-text': logItem >= 3}"
+        [ngClass]="{'blue-text': logItem >= 3}"
       >Posición: {{ logItem }}. Fecha Hora: {{timestamp}}
 </div>
