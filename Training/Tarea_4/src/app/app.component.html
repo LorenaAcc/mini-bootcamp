@@ -1,0 +1,38 @@
+<div class="container">
+  <div class="row">
+      <div class="col-xs-12">
+          <h1>App component - Esta es la {{ numeroDeTarea }}</h1>
+
+          <hr>
+          <div class="row">
+            <div class="col-xs-12">
+              <app-game-control (intervalFired)="onIntervalFired($event)"></app-game-control>
+            </div>
+          </div>
+          <hr>
+          <table class="table table-bordered table-striped">
+            <thead>
+            <tr>
+              <th>Numeros Imares</th>
+              <th>Numeros Pares</th>
+            </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><div class="row">
+                  <div class="col-xs-12">
+                    <app-odd *ngFor="let oddNumber of oddNumbers" [number]="oddNumber"></app-odd>
+                  </div>
+                </div></td>
+                <td><div class="row">
+                  <div class="col-xs-12">
+                    <app-even *ngFor="let evenNumber of evenNumbers" [number]="evenNumber"></app-even>
+                  </div>
+                </div></td>
+              </tr>
+            </tbody>
+          </table>
+      </div>
+  </div>
+</div>
+
