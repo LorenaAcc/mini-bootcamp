@@ -30,6 +30,7 @@ export class AppComponent {
     // this.data.email = this.dataForm.value.formData.email;
     // this.data.subscription = this.dataForm.value.formData.subscription;
     // this.data.password = this.dataForm.value.formData.password;
+    form.reset();
   }
 
 }
