@@ -14,7 +14,7 @@ export class AuthComponent{
     }
 
     onSubmit(form: NgForm){
-        console.log(form.value);
+        console.log(form.value.formData.email);
         form.reset();
     }
 }
