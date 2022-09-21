@@ -14,9 +14,7 @@
                     ngModel
                     name="email"
                     required
-                    email
-                    #email="ngModel">
-                    <span class="help-block" id="invalidEmail" *ngIf="!email.valid && email.touched">Invalid email!</span>
+                    email>
             </div>
             <div class="form-group">
                 <label for="password">Password</label>
@@ -27,9 +25,7 @@
                     ngModel
                     name="password"
                     required
-                    minLength="6"
-                    #password="ngModel">
-                    <span class="help-block" id="invalidPass" *ngIf="password.touched && !password.value">Please, enter password!</span> 
+                    minLength="6">
             </div>
             </div>
             <div>
