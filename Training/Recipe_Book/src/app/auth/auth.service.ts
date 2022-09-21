@@ -3,7 +3,7 @@ import { HttpClient } from '@angular/common/http';
 
 //Body response type
 interface AuthResponseData {
-    //kind: string;
+    kind: string;
     idToken: string;
     email: string;
     refreshToken: string;
