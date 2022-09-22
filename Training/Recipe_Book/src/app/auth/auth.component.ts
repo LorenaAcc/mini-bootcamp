@@ -30,12 +30,12 @@ export class AuthComponent{
         let authObs: Observable<AuthResponseData>;
 
         this.isLoading = true;
-        //console.log('onSubmit_isLoginMode: ' + this.isLoginMode);
+        console.log('onSubmit_isLoginMode: ' + this.isLoginMode);
         if(this.isLoginMode){
-            //console.log('isLoginMode');
+            console.log('isLoginMode');
             authObs = this.authService.login(email, password)
         } else {
-            //console.log('!isLoginMode');
+            console.log('!isLoginMode');
             authObs = this.authService.signUp(email, password)
         }
 
