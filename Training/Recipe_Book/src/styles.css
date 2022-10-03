@@ -1,1 +1,9 @@
-/* You can add global styles to this file, and also import other style files */
+.container{
+    width: 100%;
+    padding-bottom: 3%;
+    padding-top: 7%;
+}
+
+.spacer {
+    flex: 1 1 auto;
+}

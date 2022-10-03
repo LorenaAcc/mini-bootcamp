@@ -24,6 +24,7 @@ import {
       | Promise<boolean | UrlTree>
       | Observable<boolean | UrlTree> {
       return this.authService.user.pipe(
+        //take(1) --> to make sure we always just take the lastest user value and then unsubscribe for this guard execution. Add in front of map so, we don't have going to the user subscription
         take(1),
         map(user => {
           const isAuth = !!user;

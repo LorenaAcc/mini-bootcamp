@@ -1,4 +1,13 @@
-input.ng-invalid.ng-touched,
+/* input.ng-invalid.ng-touched,
 textarea.ng-invalid.ng-touched {
-  border: 1.5px solid red;
+  border: 1px solid red;
+} */
+.full-width {
+  width: 100%;
+}
+
+img{
+  display:flex;
+  width: 45%;
+  height: 45%;
 }
