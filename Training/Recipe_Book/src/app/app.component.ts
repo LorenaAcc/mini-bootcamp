@@ -26,10 +26,5 @@ export class AppComponent implements OnInit{
     this.componentCssClass = e;
     console.log(this.componentCssClass);
   }
- 
-  // loadedFeature = 'recipe';
 
-  // onNavigate(feature: string) {
-  //   this.loadedFeature = feature;
-  // }
 }

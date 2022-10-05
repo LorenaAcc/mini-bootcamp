@@ -4,7 +4,7 @@
     left: 0;
     width: 100vw;
     height: 100vh;
-    background: rgba(229, 28, 28, 0.073);
+    background: rgba(108, 99, 99, 0.073);
     z-index: 50;
   }
   
@@ -15,8 +15,9 @@
     width: 60vw;
     padding: 16px;
     z-index: 100;
-    background: rgb(207, 243, 31);
+    background: rgb(234, 56, 97);
     box-shadow: 0 2px 8px rbga(0, 0, 0, 0.26);
+    border-radius: 4px;
   }
   
   .alert-box-actions {
