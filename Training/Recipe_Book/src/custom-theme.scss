@@ -30,3 +30,12 @@ $recipe-dark-theme: mat-dark-theme($recipe-dark-primary, $recipe-dark-accent, $r
     background: rgb(220, 214, 214);
     color: #222;
 }
+
+
+.mat-slide-toggle-bar {
+    background-color: rgb(204, 102, 237) !important;
+  }
+
+  .mat-slide-toggle-thumb {
+    background-color: #681db4 !important;
+}
