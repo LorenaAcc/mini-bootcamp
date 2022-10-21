@@ -6,26 +6,24 @@ import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http'
 
 import { AppComponent } from './app.component';
 import { HeaderComponent } from './header/header.component';
-import { ShoppingListComponent } from './shopping-list/shopping-list.component';
-import { ShoppingEditComponent } from './shopping-list/shopping-edit/shopping-edit.component';
-import { DropdownDirective } from './shared/dropdown.directive';
 import { ShoppingListService } from './shopping-list/shopping-list.service';
 import { AppRoutingModule } from './app-routing.module';
 import { RecipeService } from './recipes/recipe.service';
 import { AuthComponent } from './auth/auth.component';
-import { LoadingSpinnerComponent } from './shared/loading-spinner/loading-spinner.component';
 import { AuthInterceptorService } from './auth/auth-interceptor.service';
-import { AlertComponent } from './shared/alert/alert.component';
+//import { AlertComponent } from './shared/alert/alert.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MaterialExampleModule } from 'src/matrial.module';
 import { FontAwesomeModule, FaIconLibrary } from '@fortawesome/angular-fontawesome';
-import { PlaceholderDirective } from './shared/placeholder/placeholder.directive';
+//import { PlaceholderDirective } from './shared/placeholder/placeholder.directive';
 import { faMoon } from '@fortawesome/free-solid-svg-icons';
 import { faSun } from '@fortawesome/free-solid-svg-icons';
 import { fas } from '@fortawesome/free-solid-svg-icons';
 import { far } from '@fortawesome/free-regular-svg-icons';
 import { RecipesModule } from './recipes/recipes.module';
 import { DialogAnimations } from './shared/dialog/dialog.component'
+import { ShoppingListModule } from './shopping-list/shopping-list.module';
+import { SharedModule } from './shared/shared.module';
 
 
 
@@ -33,13 +31,7 @@ import { DialogAnimations } from './shared/dialog/dialog.component'
   declarations: [
     AppComponent,
     HeaderComponent,
-    ShoppingListComponent,
-    ShoppingEditComponent,
-    DropdownDirective,
     AuthComponent,
-    LoadingSpinnerComponent,
-    AlertComponent,
-    PlaceholderDirective,
     DialogAnimations
   ],
   imports: [
@@ -51,7 +43,9 @@ import { DialogAnimations } from './shared/dialog/dialog.component'
     BrowserAnimationsModule,
     MaterialExampleModule,
     FontAwesomeModule,
-    RecipesModule
+    RecipesModule,
+    ShoppingListModule,
+    SharedModule
   ],
   providers: [
     ShoppingListService, 
@@ -61,9 +55,6 @@ import { DialogAnimations } from './shared/dialog/dialog.component'
   bootstrap: [
     AppComponent
   ],
-  entryComponents: [ 
-    AlertComponent
-  ]
 })
 export class AppModule { 
   constructor(library: FaIconLibrary){

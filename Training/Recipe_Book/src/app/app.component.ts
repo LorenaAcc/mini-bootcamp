@@ -24,7 +24,7 @@ export class AppComponent implements OnInit{
     this.overlayContainer.getContainerElement().classList.add(e);
     //console.log(this.overlayContainer.getContainerElement().classList[1]);
     this.componentCssClass = e;
-    console.log(this.componentCssClass);
+    //console.log(this.componentCssClass);
   }
 
 }
