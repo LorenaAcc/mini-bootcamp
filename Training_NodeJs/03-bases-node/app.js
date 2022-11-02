@@ -1,7 +1,7 @@
 const { options } = require('yargs');
 const { crearArchivo } = require('./helpers/multiplicar');
 const argv = require('./config/yargs');
-var colors = require('colors');
+const colors = require('colors');
 //utilizando yargs - me interesa que esxtraiga del paquete de yargs: argv
 // const argv = require('yargs')
 //                 .options('b', {
