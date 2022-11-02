@@ -1,29 +1,35 @@
 const { options } = require('yargs');
 const { crearArchivo } = require('./helpers/multiplicar');
+const argv = require('./config/yargs');
+var colors = require('colors');
 //utilizando yargs - me interesa que esxtraiga del paquete de yargs: argv
-const argv = require('yargs')
-                .options('b', {
-                    alias: 'base',
-                    type: 'number',
-                    demandOption: true
-                })
-                .options('l', {
-                    alias: 'listar',
-                    type: 'boolean',
-                    demandOption: true,
-                    default: false
-                })
-                .check( (argv, options) => {
-                    if( isNaN( argv.b )){
-                        throw 'La base tiene que ser un número'
-                    }
-                    return true;
-                })
-                .argv;
+// const argv = require('yargs')
+//                 .options('b', {
+//                     alias: 'base',
+//                     type: 'number',
+//                     demandOption: true
+//                 })
+//                 .options('l', {
+//                     alias: 'listar',
+//                     type: 'boolean',
+//                     demandOption: true,
+//                     default: false
+//                 })
+//                 .check( (argv, options) => {
+//                     if( isNaN( argv.b )){
+//                         throw 'La base tiene que ser un número'
+//                     }
+//                     return true;
+//                 })
+//                 .argv;
 
 console.clear();
 
-console.log(argv);
+crearArchivo( argv.b ,argv.l )
+    .then(nombreArchivo => console.log(nombreArchivo, 'creado'.bgYellow))
+    .catch(err => console.log(err.cyan));
+
+//console.log(argv);
 
 /*
 **argv que se encuentra en los procesos propios de node**
@@ -52,6 +58,3 @@ console.log( process.argv );
 //     .then(nombreArchivo => console.log(nombreArchivo, 'creado'))
 //     .catch(err => console.log(err));
 
-crearArchivo( argv.b ,argv.l )
-    .then(nombreArchivo => console.log(nombreArchivo, 'creado'))
-    .catch(err => console.log(err));
