@@ -25,7 +25,7 @@ const colors = require('colors');
 
 console.clear();
 
-crearArchivo( argv.b ,argv.l )
+crearArchivo( argv.b ,argv.l, argv.h )
     .then(nombreArchivo => console.log(nombreArchivo, 'creado'.bgYellow))
     .catch(err => console.log(err.cyan));
 
