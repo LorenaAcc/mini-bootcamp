@@ -1,8 +1,9 @@
 require('colors');
 
 const mostrarMenu = () => {
+
     return new Promise(resolve => {
-        console.log();
+
         console.log('============================'.rainbow);
         console.log('   Seleccione una opción    '.bgCyan);
         console.log('============================\n'.rainbow);
@@ -25,8 +26,8 @@ const mostrarMenu = () => {
             readline.close();
             resolve(opt);
         })
+    
     });
-
 
 }
 
