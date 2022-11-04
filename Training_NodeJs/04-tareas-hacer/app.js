@@ -1,6 +1,6 @@
 require('colors');
 
-const { guardarDb } = require('./helpers/guardarArchivo');
+const { guardarEnArch, leerArchivo } = require('./helpers/guardarArchivo');
 //const { mostrarMenu, pausa } = require('./helpers/mensajes');
 const { inquirerMenu, pausa, leerInput } = require('./helpers/inquirer');
 //const Tarea = require('./models/tarea');
@@ -13,6 +13,14 @@ const main = async() => {
 
     let opt = '';
     const tareas = new Tareas();
+
+    const infoArchivo= leerArchivo();
+
+    if(infoArchivo) {
+        
+    }
+
+    await pausa();
 
     do {
         //opt = await  mostrarMenu();
@@ -32,7 +40,7 @@ const main = async() => {
         //const tareas = new Tareas();
         //const tarea = new Tarea('Comprar Comida');
        //console.log(tareas);
-        guardarDb( tareas.listadoArr );
+        //guardarEnArch( tareas.listadoArr );
 
         await pausa();
         //if (opt !== '0') await pausa();
