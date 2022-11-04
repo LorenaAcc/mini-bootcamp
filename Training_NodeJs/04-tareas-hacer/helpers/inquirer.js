@@ -5,35 +5,35 @@ const preguntas = [
     {
         type: 'list',
         name: 'opción',
-        message: '¿Qué desea hacer?',
+        message: '¿Qué desea hacer?\n',
         choices: [
             {
                 value: '1',
-                name: '1. Crear tarea'
+                name: `${'1'.red}. ${'Crear tarea'.italic}`
             },
             {
                 value: '2',
-                name: '2. Listar tareas'
+                name: `${'2'.red}. ${'Listar tareas'.italic}`
             },
             {
                 value: '3',
-                name: '3. Listar tareas completadas'
+                name: `${'3'.red}. ${'Listar tareas completadas'.italic}`
             },
             {
                 value: '4',
-                name: '4. Listar tareas pendientes'
+                name: `${'4'.red}. ${'Listar tareas pendientes'.italic}`
             },
             {
                 value: '5',
-                name: '5. Completar tarea/s'
+                name: `${'5'.red}. ${'Completar tarea/s'.italic}`
             },
             {
                 value: '6',
-                name: '6. Borrar tarea/s'
+                name: `${'6'.red}. ${'Borrar tarea/s'.italic}`
             },
             {
                 value: '0',
-                name: '0. Salir'
+                name: `${'0'.red}. ${'Salir'.italic}`
             }
         ]
     }
