@@ -1,5 +1,6 @@
 const colors = require('colors/safe');
 
+
 const fs = require('fs');
 
 const crearArchivo = async( base = 5, listar = false, hasta = 10 ) => {
