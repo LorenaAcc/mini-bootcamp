@@ -1,5 +1,6 @@
 require('colors');
 
+const { guardarDb } = require('./helpers/guardarArchivo');
 //const { mostrarMenu, pausa } = require('./helpers/mensajes');
 const { inquirerMenu, pausa, leerInput } = require('./helpers/inquirer');
 //const Tarea = require('./models/tarea');
@@ -16,7 +17,6 @@ const main = async() => {
     do {
         //opt = await  mostrarMenu();
 
-
         opt = await  inquirerMenu();
         
         switch (opt) {
@@ -32,7 +32,7 @@ const main = async() => {
         //const tareas = new Tareas();
         //const tarea = new Tarea('Comprar Comida');
        //console.log(tareas);
-
+        guardarDb( tareas.listadoArr );
 
         await pausa();
         //if (opt !== '0') await pausa();
