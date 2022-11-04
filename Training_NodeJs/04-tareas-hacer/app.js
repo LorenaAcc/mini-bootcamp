@@ -17,10 +17,8 @@ const main = async() => {
     const infoArchivo= leerArchivo();
 
     if(infoArchivo) {
-        
+        tareas.cargarTareasFromArray(infoArchivo);
     }
-
-    await pausa();
 
     do {
         //opt = await  mostrarMenu();
