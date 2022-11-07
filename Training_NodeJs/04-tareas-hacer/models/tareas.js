@@ -3,7 +3,9 @@ const Tarea = require('./tarea');
 
 class Tareas {
 
-    _listado = {};
+    _listado = {
+        'abc':123
+    };
 
     get listadoArr() {
         const listado = [];
@@ -18,6 +20,12 @@ class Tareas {
 
     constructor() {
         this._listado = {};
+    }
+
+    borrarTarea( id= '' ) {
+        if ( this._listado[id] ) {
+            delete this._listado[id];
+        }
     }
 
     cargarTareasFromArray( tareas = [] ) {
@@ -45,8 +53,7 @@ class Tareas {
     listarPendientesCompletadas( completadas= true) {
         console.log();
         let indice = 0;
-        this.listadoArr.forEach( tarea => {
-           
+        this.listadoArr.forEach( tarea => {           
             const { desc, completadoEn } = tarea;
             const estado = ( completadoEn ) ? 'Completada'.green : 'Pendiente'.red;
 
