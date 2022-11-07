@@ -2,7 +2,7 @@ require('colors');
 
 const { guardarEnArch, leerArchivo } = require('./helpers/guardarArchivo');
 //const { mostrarMenu, pausa } = require('./helpers/mensajes');
-const { inquirerMenu, pausa, leerInput, listadoTareasBorrar } = require('./helpers/inquirer');
+const { inquirerMenu, pausa, leerInput, listadoTareasBorrar, confirmar } = require('./helpers/inquirer');
 //const Tarea = require('./models/tarea');
 const Tareas = require('./models/tareas');
 
@@ -42,7 +42,13 @@ const main = async() => {
             break;
             case '6':
                 const id = await listadoTareasBorrar( tareas.listadoArr );
-                console.log({ id });
+                if( id !== '0') {
+                    const ok = await confirmar('¿Está seguro?');
+                    if(ok) {
+                        tareas.borrarTarea(id);
+                        console.log('Tarea borrada')
+                    }
+                } 
             break;
         }
 
