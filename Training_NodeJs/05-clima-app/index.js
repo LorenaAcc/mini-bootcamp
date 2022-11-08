@@ -30,7 +30,7 @@ const main = async() => {
             break;
         }
 
-        await pausa();
+        //await pausa();
         if (opt !== 0) await pausa();
     } while( opt !== 0 );
 }
