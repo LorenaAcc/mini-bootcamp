@@ -10,7 +10,7 @@ class Busquedas {
     async ciudad(lugar = '') {
 
         //console.log('ciudad',lugar);
-        const resp = await axios.get('https://reqres.in/api/users?page=2');
+        const resp = await axios.get('https://api.mapbox.com/geocoding/v5/mapbox.places/madrid.json?proximity=ip&language=es&access_token=pk.eyJ1IjoibG9yZTMyIiwiYSI6ImNsYThkbzVwOTAyN2ozb3J5aW1tOXVwY3gifQ.eHzHgVhLPHQtZwoIXvA0tg&limit=5');
         console.log(resp.data);
         return [];
     } catch (error) {
