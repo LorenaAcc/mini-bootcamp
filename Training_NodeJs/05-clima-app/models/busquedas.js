@@ -29,10 +29,13 @@ class Busquedas {
 
             // const resp = await axios.get('https://api.mapbox.com/geocoding/v5/mapbox.places/madrid.json?proximity=ip&language=es&access_token=pk.eyJ1IjoibG9yZTMyIiwiYSI6ImNsYThkbzVwOTAyN2ozb3J5aW1tOXVwY3gifQ.eHzHgVhLPHQtZwoIXvA0tg&limit=5');
 
-            console.log(resp.data);
-            //console.log(resp.data.env.MAPBOX_KEY);
-
-            return [];
+            //console.log(resp.data);
+            return resp.data.features.map( lugar => ({
+                id: lugar.id,
+                nombre: lugar.place_name,
+                lng: lugar.center[0],
+                lat: lugar.center[1],
+            }));
 
         } catch (error) {         
             return [];
