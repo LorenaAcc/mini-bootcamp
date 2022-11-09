@@ -22,7 +22,12 @@ const main = async() => {
 
                 //Seleccionar lugar
                 const idSeleccionado = await listarLugares(lugares);
+
+                if(idSeleccionado === '0') continue; 
+
                 const lugarSeleccionado = lugares.find( l => l.id === idSeleccionado ); 
+
+                busquedas.agregarHistorial( lugarSeleccionado.nombre);
 
                 //Clima
                 const clima = await busquedas.climaLugar(lugarSeleccionado.lat, lugarSeleccionado.lng);
@@ -37,10 +42,15 @@ const main = async() => {
                 console.log('Mínima: ', clima.min);
                 console.log('Máxima: ', clima.max);
                 console.log('Estado del clima: ', clima.desc.cyan);
-                break;
+            break;
+
             case 2:
-                console.log( 'Opcion 2' );
-                break;
+                busquedas.historial.forEach( (lugar, i) => {
+                    const indice = `${i + 1}.`.cyan;
+                    console.log(`${indice} ${lugar}`);
+                })
+            break;
+            
             case 0:
                 console.log( 'Salir' );
             break;
