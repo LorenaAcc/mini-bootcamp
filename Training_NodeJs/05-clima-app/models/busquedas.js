@@ -1,15 +1,26 @@
-
 const fs = require('fs');
 
 const axios = require('axios');
 
+
 class Busquedas {
-    historial = ['Tegucigalpa','San Jose'];
+    historial = ["san jose, provincia de buenos aires, argentina"];
     dbPath = './db/database.json';
 
-
     constructor() {
+        this.leerDB();
+    }
+    
+    get historialCapitalizado(){
 
+        return this.historial.map( lugar => {
+
+            let palabras = lugar.split(' ');
+            palabras = palabras.map( p => p[0].toUpperCase() + p.substring(1) );
+
+            return palabras.join(' ')
+
+        })
     }
 
     get paramsMapbox() {
@@ -31,7 +42,7 @@ class Busquedas {
 
     async ciudad(lugar = '') {
         try{
-            
+            // Petición http
             const instance = axios.create({
                 baseURL: `https://api.mapbox.com/geocoding/v5/mapbox.places/${lugar}.json`,
                 params: this.paramsMapbox
@@ -39,9 +50,6 @@ class Busquedas {
 
             const resp = await instance.get();
 
-            // const resp = await axios.get('https://api.mapbox.com/geocoding/v5/mapbox.places/madrid.json?proximity=ip&language=es&access_token=pk.eyJ1IjoibG9yZTMyIiwiYSI6ImNsYThkbzVwOTAyN2ozb3J5aW1tOXVwY3gifQ.eHzHgVhLPHQtZwoIXvA0tg&limit=5');
-
-            //console.log(resp.data);
             return resp.data.features.map( lugar => ({
                 id: lugar.id,
                 nombre: lugar.place_name,
@@ -79,29 +87,41 @@ class Busquedas {
     }
 
     agregarHistorial( lugar = '' ) {
+        try{
+            //Evitar duplicados
+            if( this.historial.includes( lugar.toLocaleLowerCase() ) ){
+                return;
+            }
+            this.historial = this.historial.splice(0,5);
 
-        //Evitar duplicados
-        if( this.historial.includes(lugar.toLocaleLowerCase() )){
-            return;
+            this.historial.unshift( lugar.toLocaleLowerCase() );
+
+            // Grabar en DB
+            this.guardarEnDB();
         }
 
-        this.historial.unshift(lugar.toLocaleLowerCase());
-
-        //Guardar en DB
-        this.guardarEnDB();
-    }
+        catch (error) {
+            console.log(error);
+        }
+    }     
 
     guardarEnDB(){
 
-        // const payload = {
-        //     historial: this.historial
-        // };
+        const payload = {
+            historial: this.historial
+        };
 
-        //fs.writeFileSync( this.dbPath, JSON.this.stringify(payload) );
-        fs.writeFileSync( this.dbPath, JSON.stringify(this.historial) );
+        fs.writeFileSync( this.dbPath, JSON.stringify(payload) );
     }
 
-    leerBD(){
+    leerDB(){
+
+        if(!fs.existsSync(this.dbPath)) return;
+
+        const info = fs.readFileSync(this.dbPath, {encoding: 'utf-8'});
+        const data = JSON.parse(info);
+
+        this.historial = data.historial;
 
     }
 

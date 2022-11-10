@@ -27,7 +27,7 @@ const main = async() => {
 
                 const lugarSeleccionado = lugares.find( l => l.id === idSeleccionado ); 
 
-                busquedas.agregarHistorial( lugarSeleccionado.nombre);
+                busquedas.agregarHistorial( lugarSeleccionado.nombre);          
 
                 //Clima
                 const clima = await busquedas.climaLugar(lugarSeleccionado.lat, lugarSeleccionado.lng);
@@ -45,18 +45,14 @@ const main = async() => {
             break;
 
             case 2:
-                busquedas.historial.forEach( (lugar, i) => {
+                busquedas.historialCapitalizado.forEach( (lugar, i) => {
                     const indice = `${i + 1}.`.cyan;
                     console.log(`${indice} ${lugar}`);
-                })
+                });
             break;
-            
-            case 0:
-                console.log( 'Salir' );
-            break;
+
         }
 
-        //await pausa();
         if (opt !== 0) await pausa();
     } while( opt !== 0 );
 }
