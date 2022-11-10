@@ -9,7 +9,7 @@ app.use(express.static('public'));
 
 
 app.get('/', (req, res) => {
-    res.render('home');
+    res.render('home', { nombre: 'Lorena Martin', titulo: 'Curso Node'});
 });
 
 app.get('/generic', (req, res) => {
