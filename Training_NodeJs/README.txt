@@ -101,13 +101,39 @@ npm i inquirer
 
 Si surje un error de require() not supported, solución rápida -> cambiar versión:
 
+npm uninstall inquirer
 npm i inquirer@8.1.2
 
 ----------------------------------------------
 INSTALAR PAQUETE UUID:
 
 npm i uuid
+----------------------------------------------
+AXIOS (Cliente HTTP basado en promesas para el navegador y node.js)
 
+https://www.npmjs.com/package/axios
+
+PARA INSTALAR AXIOS:
+
+npm i axios
+
+----------------------------------------------
+MAPBOX ACCOUT
+
+https://account.mapbox.com/
+
+MAPBOX GEOCODING
+
+https://docs.mapbox.com/api/search/geocoding/
+
+----------------------------------------------------------
+INSTALAR PAQUETE DOTENV:
+
+npm i dotenv
+
+(Dotenv es un módulo de dependencia cero que carga variables de entorno desde un archivo .env en process.env. El almacenamiento de la configuración en el entorno separado del código se basa en la metodología de la aplicación The Twelve-Factor.)
+
+---------------------------------------------------------------
 
 
 
