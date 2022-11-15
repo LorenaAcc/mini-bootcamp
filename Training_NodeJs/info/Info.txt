@@ -1,0 +1,46 @@
+VER: 
+
+
+https://help.dreamhost.com/hc/es/articles/4466702078740-Configurar-git-para-usar-main-como-rama-principal
+
+
+-----------------------------------------------------------------------
+CAMBIAR DE REPO
+
+a)ADD REPO
+
+git remote add origin https://github.com/LorenaAcc/mini-bootcamp/tree/main/Training_NodeJs/07-restserver
+
+git remote add heroku https://git.heroku.com/restserver-curso-lore.git
+
+                 -----------------------------------------------------------
+
+b)SETEAR REPO
+
+
+git remote set-url origin <tu nueva url> 
+
+git remote set-url origin https://github.com/LorenaAcc/mini-bootcamp/tree/main/Training_NodeJs/07-restserver
+
+
+git remote set-url heroku https://git.heroku.com/restserver-curso-lore.git
+
+
+ 
+
+git push heroku main
+git push
+
+-----------------------------------------
+
+CAMBIAR BRANCH MASTER A MAIN:
+
+renombrar a main:
+	git branch -m main
+
+cambiar a main:
+	git checkout main
+
+-----------------------------------
+
+ https://restserver-curso-lore.herokuapp.com/ deployed to Heroku
