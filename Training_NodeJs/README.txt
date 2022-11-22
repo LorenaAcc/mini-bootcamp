@@ -135,12 +135,36 @@ npm i dotenv
 
 ---------------------------------------------------------------
 
+INSTALAR CORS
+
+https://www.npmjs.com/package/cors
+
+	
+	npm i cors
+
+CORS es un paquete de node.js para proporcionar un middleware Connect/Express que se puede usar para habilitar CORS con varias opciones.
+
+------------------------------------------------------------------
+CREAR UN REALESE TAG 
 
 
+git tag -a v1.0.0 -m "Fin sección 8"
+
+git push --tags
+
+-----------------------------------------------------------------
+
+INSTALAR MONGOOSE
+
+npm i mongoose
+
+--------------------------------------------------------------
+PAQUETE PARA ENCRIPTAR CONTRASEÑA: 
+
+npm i bcryptjs
 
 
+---------------------------------------------------------
+PAQUETE PARA VALIDAR CAMPOS: 
 
-
-
-
-
+npm i express-validator

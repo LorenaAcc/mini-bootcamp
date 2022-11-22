@@ -18,6 +18,8 @@ git remote add heroku https://git.heroku.com/restserver-curso-lore.git
 b)SETEAR REPO
 
 
+git remote set-url origin
+
 git remote set-url origin <tu nueva url> 
 
 git remote set-url origin https://github.com/LorenaAcc/mini-bootcamp/tree/main/Training_NodeJs/07-restserver
