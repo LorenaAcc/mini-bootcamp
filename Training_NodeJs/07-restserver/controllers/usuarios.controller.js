@@ -64,8 +64,10 @@ const usuariosPatch = (req, res = response) => {
 }
 
 const usuariosDelete = (req, res = response) => {
+
+    const {id} = req.params;
     res.json({
-        msg: 'delete API - usuariosDelete'
+        id
     });
 }
 
