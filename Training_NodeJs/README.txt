@@ -168,3 +168,14 @@ npm i bcryptjs
 PAQUETE PARA VALIDAR CAMPOS: 
 
 npm i express-validator
+
+
+-----------------------------------------------------------
+PAQUETE JSONWEBTOKEN
+
+npm i jsonwebtoken
+
+
+
+
+uniqueid=CDC76F3C-F31B-4E9C-B767-3842330CECE'%20or%20'15'%3d'15&period=2020-09-30
