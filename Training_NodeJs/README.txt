@@ -175,6 +175,11 @@ PAQUETE JSONWEBTOKEN
 
 npm i jsonwebtoken
 
+-------------------------------------------------------------
+To validate an ID token in Node.js, use the Google Auth Library for Node.js. Install the library:
+
+npm install google-auth-library --save
+
 
 
 
