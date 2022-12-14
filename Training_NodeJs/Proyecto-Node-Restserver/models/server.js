@@ -10,10 +10,15 @@ class Server{
         this.app = express();
         //Configuración del puerto
         this.port= process.env.PORT;
-        //Define url de usuarios
-        this.usuariosPath = '/api/usuarios';
 
-        this.authPath = '/api/auth';
+        //Define url de auth, usuarios, categorias
+        this.paths = {
+            auth: '/api/auth',
+            usuarios: '/api/usuarios',
+            categorias: '/api/categorias'
+
+        }
+
         //Conectar a base de datos
         this.conectarDB();
 
@@ -42,8 +47,9 @@ class Server{
     }
 
     routes() {
-        this.app.use(this.authPath, require('../routes/auth.route'));
-        this.app.use(this.usuariosPath, require('../routes/usuarios.route'));
+        this.app.use(this.paths.auth, require('../routes/auth.route'));
+        this.app.use(this.paths.usuarios, require('../routes/usuarios.route'));
+        this.app.use(this.paths.categorias, require('../routes/categorias.route'));
     }
 
     listen() {
