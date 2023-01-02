@@ -1,0 +1,1 @@
+Aqui van a guardarse los archivos (imágenes, txt, etc)
