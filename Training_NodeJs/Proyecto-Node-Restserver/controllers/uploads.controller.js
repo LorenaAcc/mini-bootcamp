@@ -10,21 +10,30 @@ const cargarArchivo = async(req, res = response) => {
         return;
     }
 
-try{
-    //txt,md
-    //const nombre = await subirArchivo(req.files, ['txt','md'], 'textos');
+    try{
+        //txt,md
+        //const nombre = await subirArchivo(req.files, ['txt','md'], 'textos');
 
-    //img
-    const nombre = await subirArchivo(req.files, undefined, 'imgs');
-    res.json({ nombre });
-}catch(msg){
-    res.status(400).json({msg});
+        //img
+        const nombre = await subirArchivo(req.files, undefined, 'imgs');
+        res.json({ nombre });
+    }catch(msg){
+        res.status(400).json({msg});
+    }
+        
 }
-    
+
+const actualizarImagen = async(req, res = response) => {
+
+    const {id, coleccion} = req.params;
+
+    res.json({id, coleccion})
+
 }
 
 
 
 module.exports = {
-    cargarArchivo
+    cargarArchivo,
+    actualizarImagen
 }
